@@ -86,9 +86,9 @@ ApiConnector.addUserToFavorites(response, (check) => {
         Favorites.clearTable();
         Favorites.fillTable(check.data)
         doingMoney.updateUsersList(check.data)
-        doingMoney.setMessage(check.success, 'Пользователь добавлен в адресную книгу' )
+        Favorites.setMessage(check.success, 'Пользователь добавлен в адресную книгу' )
     } else {
-        doingMoney.setMessage(check.success, check.error )
+        Favorites.setMessage(check.success, check.error )
     }
 
 })
@@ -101,9 +101,9 @@ Favorites.removeUserCallback = (response) => {
             Favorites.clearTable();
             Favorites.fillTable(check.data)
             doingMoney.updateUsersList(check.data)
-            doingMoney.setMessage(check.success, 'Пользователь удален из адресную книгу' )
+            Favorites.setMessage(check.success, 'Пользователь удален из адресной книги' )
         } else {
-            doingMoney.setMessage(check.success, check.error )
+            Favorites.setMessage(check.success, check.error )
         }
 
     })
